@@ -10,6 +10,13 @@ const LocationLongitude = {
   MIN: 139.7,
   MAX: 139.8
 }
+const ApartmentType = {
+  palace: 'Дворец',
+  flat: 'Квартира',
+  house: 'Дом',
+  bungalow: 'Бунгало'
+}
+
 const apartTypes = ['palace', 'flat', 'house', 'bungalow'];
 const apartFeatures = ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'];
 const apartPhotos = ['http://o0.github.io/assets/images/tokyo/hotel1.jpg',
@@ -26,7 +33,7 @@ const fullApartments = (count = 10) => {
         avatar: 'img/avatars/user' + (i < 9 ? '0' + (i + 1)  : i + 1) + '.png'
       },
       offer: {
-        title: 'Хорошая квартирка',
+        title: 'Ужасная квартирка',
         address: '',
         price: randomIntegner(10000, 100000),
         type: apartTypes[randomIntegner(0, apartTypes.length - 1)],
@@ -35,7 +42,7 @@ const fullApartments = (count = 10) => {
         checkin: checkTime[randomIntegner(0, checkTime.length -1)],
         checkout: checkTime[randomIntegner(0, checkTime.length -1)],
         features: flatParam(apartFeatures),
-        discription: 'Очень хорошая квартирка',
+        description: 'Очень ужасная квартирка',
         photos: flatParam(apartPhotos)
       },
       location: {
@@ -49,4 +56,4 @@ const fullApartments = (count = 10) => {
   }
 };
 
-export { APARTMENTS_COUNT, LENGTH_FLOAT_LOCATION, LocationLatitude, LocationLongitude, apartTypes, apartFeatures, apartPhotos, checkTime, apartments, fullApartments};
+export { APARTMENTS_COUNT, LENGTH_FLOAT_LOCATION, LocationLatitude, LocationLongitude, ApartmentType, apartTypes, apartFeatures, apartPhotos, checkTime, apartments, fullApartments };
