@@ -16,6 +16,12 @@ const ApartmentType = {
   house: 'Дом',
   bungalow: 'Бунгало'
 }
+const MinPrices = {
+  bungalow: 0,
+  flat: 1000,
+  house: 5000,
+  palace: 10000
+}
 
 const apartTypes = ['palace', 'flat', 'house', 'bungalow'];
 const apartFeatures = ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'];
@@ -56,4 +62,4 @@ const fullApartments = (count = 10) => {
   }
 };
 
-export { APARTMENTS_COUNT, LENGTH_FLOAT_LOCATION, LocationLatitude, LocationLongitude, ApartmentType, apartTypes, apartFeatures, apartPhotos, checkTime, apartments, fullApartments };
+export { APARTMENTS_COUNT, LENGTH_FLOAT_LOCATION, LocationLatitude, LocationLongitude, ApartmentType, MinPrices, apartTypes, apartFeatures, apartPhotos, checkTime, apartments, fullApartments };

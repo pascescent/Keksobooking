@@ -1,5 +1,6 @@
 import { APARTMENTS_COUNT, fullApartments, apartments } from './data.js';
 import { makeNewCard } from './template.js';
+import './form.js';
 
 fullApartments(2);
 
