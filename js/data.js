@@ -62,4 +62,8 @@ const fullApartments = (count = 10) => {
   }
 };
 
+
+
+
+
 export { APARTMENTS_COUNT, LENGTH_FLOAT_LOCATION, LocationLatitude, LocationLongitude, ApartmentType, MinPrices, apartTypes, apartFeatures, apartPhotos, checkTime, apartments, fullApartments };

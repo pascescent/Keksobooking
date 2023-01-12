@@ -33,7 +33,7 @@ const randomFloatNumber = (min, max, point) => {
 
 // Выбор случайных параметров из массива - вывод их в новый массив
 
-function flatParam(arr) {
+const flatParam = (arr) => {
   let result = [];
 
   for (const feature of arr) {
