@@ -46,7 +46,7 @@ const fullApartments = (count = 10) => {
         rooms: randomIntegner(1, 5),
         guests: '',
         checkin: checkTime[randomIntegner(0, checkTime.length -1)],
-        checkout: checkTime[randomIntegner(0, checkTime.length -1)],
+        checkout: '',
         features: flatParam(apartFeatures),
         description: 'Очень ужасная квартирка',
         photos: flatParam(apartPhotos)
@@ -58,9 +58,13 @@ const fullApartments = (count = 10) => {
     });
     apartments[i].offer.address = apartments[i].location.x + ', ' + apartments[i].location.y;
     apartments[i].offer.guests = Math.ceil(apartments[i].offer.rooms * 1.5);
+    apartments[i].offer.checkout = apartments[i].offer.checkin;
 
   }
 };
+
+
+fullApartments(8);
 
 
 
