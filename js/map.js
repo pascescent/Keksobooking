@@ -1,6 +1,6 @@
-import { disablePage, enablePage } from "./switch.js";
-import { makeNewCard } from "./template.js";
-import { apartments } from "./data.js";
+import { disablePage, enablePage } from './switch.js';
+import { makeNewCard } from './template.js';
+import { apartments } from './data.js';
 
 disablePage();
 
@@ -22,7 +22,7 @@ const mainPinIcon = L.icon({
   iconUrl: './img/main-pin.svg',
   iconSize: [52, 52],
   iconAnchor: [26, 52]
-})
+});
 
 const mainPinMarker = L.marker(
   {
@@ -52,11 +52,11 @@ mainPinMarker.on('moveend', (evt) => {
   mainPinSet = {
     lat: pinSet.lat.toFixed(5),
     lng: pinSet.lng.toFixed(5)
-  }
+  };
 
-  addressInput.value = `${mainPinSet.lat}, ${mainPinSet.lng}`
-  console.log(mainPinSet)
-})
+  addressInput.value = `${mainPinSet.lat}, ${mainPinSet.lng}`;
+  console.log(mainPinSet);
+});
 
 const points = apartments.map((apartment) => {
   return {
@@ -66,7 +66,7 @@ const points = apartments.map((apartment) => {
   };
 });
 
-console.log(points)
+console.log(points);
 
 points.forEach(({lat, lng, title}) => {
   const icon = L.icon({

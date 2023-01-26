@@ -6,30 +6,30 @@ const MIN_APARTMENTS_ROOMS = 1;
 const MAX_APARTMENTS_ROOMS = 3;
 const LocationLatitude = {
   MIN: 35.65,
-  MAX: 35.7
+  MAX: 35.7,
 };
 const LocationLongitude = {
   MIN: 139.7,
-  MAX: 139.8
-}
+  MAX: 139.8,
+};
 const ApartmentType = {
   palace: 'Дворец',
   flat: 'Квартира',
   house: 'Дом',
-  bungalow: 'Бунгало'
-}
+  bungalow: 'Бунгало',
+};
 const MinPrices = {
   bungalow: 0,
   flat: 1000,
   house: 5000,
-  palace: 10000
-}
+  palace: 10000,
+};
 
 const apartTypes = ['palace', 'flat', 'house', 'bungalow'];
 const apartFeatures = ['wifi', 'dishwasher', 'parking', 'washer', 'elevator', 'conditioner'];
 const apartPhotos = ['http://o0.github.io/assets/images/tokyo/hotel1.jpg',
-                    'http://o0.github.io/assets/images/tokyo/hotel2.jpg',
-                    'http://o0.github.io/assets/images/tokyo/hotel3.jpg']
+  'http://o0.github.io/assets/images/tokyo/hotel2.jpg',
+  'http://o0.github.io/assets/images/tokyo/hotel3.jpg'];
 const checkTime = ['12:00', '13:00', '14:00'];
 
 let apartments = [];
@@ -51,11 +51,11 @@ const fullApartments = (count = 10) => {
         checkout: '',
         features: flatParam(apartFeatures),
         description: 'Очень ужасная квартирка',
-        photos: flatParam(apartPhotos)
+        photos: flatParam(apartPhotos),
       },
       location: {
         x: randomFloatNumber(LocationLatitude.MIN, LocationLatitude.MAX, LENGTH_FLOAT_LOCATION),
-        y: randomFloatNumber(LocationLongitude.MIN, LocationLongitude.MAX, LENGTH_FLOAT_LOCATION)
+        y: randomFloatNumber(LocationLongitude.MIN, LocationLongitude.MAX, LENGTH_FLOAT_LOCATION),
       }
     });
     apartments[i].offer.address = apartments[i].location.x + ', ' + apartments[i].location.y;
