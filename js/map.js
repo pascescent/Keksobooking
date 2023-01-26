@@ -39,7 +39,11 @@ mainPinMarker.addTo(map);
 
 const addressInput = document.querySelector('#address');
 
-addressInput.setAttribute('disabled', '');
+// addressInput.setAttribute('readonly', '');
+
+
+
+
 
 let mainPinSet;
 
@@ -47,7 +51,7 @@ mainPinMarker.on('moveend', (evt) => {
   const pinSet = evt.target.getLatLng();
   mainPinSet = {
     lat: pinSet.lat.toFixed(5),
-    lng: pinSet.lat.toFixed(5)
+    lng: pinSet.lng.toFixed(5)
   }
 
   addressInput.value = `${mainPinSet.lat}, ${mainPinSet.lng}`

@@ -2,6 +2,8 @@ import { randomIntegner, randomFloatNumber, flatParam } from "./util.js";
 
 const APARTMENTS_COUNT = 10;
 const LENGTH_FLOAT_LOCATION = 5;
+const MIN_APARTMENTS_ROOMS = 1;
+const MAX_APARTMENTS_ROOMS = 3;
 const LocationLatitude = {
   MIN: 35.65,
   MAX: 35.7
@@ -43,7 +45,7 @@ const fullApartments = (count = 10) => {
         address: '',
         price: randomIntegner(10000, 100000),
         type: apartTypes[randomIntegner(0, apartTypes.length - 1)],
-        rooms: randomIntegner(1, 5),
+        rooms: randomIntegner(MIN_APARTMENTS_ROOMS, MAX_APARTMENTS_ROOMS),
         guests: '',
         checkin: checkTime[randomIntegner(0, checkTime.length -1)],
         checkout: '',
@@ -57,7 +59,7 @@ const fullApartments = (count = 10) => {
       }
     });
     apartments[i].offer.address = apartments[i].location.x + ', ' + apartments[i].location.y;
-    apartments[i].offer.guests = Math.ceil(apartments[i].offer.rooms * 1.5);
+    apartments[i].offer.guests = randomIntegner(1, apartments[i].offer.rooms);
     apartments[i].offer.checkout = apartments[i].offer.checkin;
 
   }
@@ -65,9 +67,6 @@ const fullApartments = (count = 10) => {
 
 
 fullApartments(8);
-
-
-
 
 
 export { APARTMENTS_COUNT, LENGTH_FLOAT_LOCATION, LocationLatitude, LocationLongitude, ApartmentType, MinPrices, apartTypes, apartFeatures, apartPhotos, checkTime, apartments, fullApartments };
